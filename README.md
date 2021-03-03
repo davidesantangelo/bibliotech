@@ -42,7 +42,45 @@ Total: 464
 
 ## Documentation
 
-### TO DO
+the endpoints that the API manages are:
+
+books ( all operations )
+authors ( create and read )
+publishers ( create and read )
+
+## Books
+
+### Index
+
+```sh
+
+curl -X GET 'https://biblio--tech.herokuapp.com/books' -H 'content-type: application/json'
+    
+```
+
+### Create
+
+
+```sh
+
+curl -X POST 'https://biblio--tech.herokuapp.com/books' -H 'content-type: application/json'
+    
+```
+
+```json
+
+{
+	"book": {
+		"title":"A Letter to Jo",
+		"description":"There’s a horrible beauty in Williams’ depiction of the war experience, like isolated segments from a Bosch painting transported to the war in Europe. What A Letter To Jo accomplishes is placing that personal experience of Leonard in a wider context, the war experience as well as the romance with Sieracki’s grandmother. It is, truly, the American story of that era",
+		"isbn":"978-1-60309-452-8",
+		"publisher": {
+			"id": "26eb9c51-ae31-40f1-b53b-75abe417a974"
+		}
+	}
+}
+
+```
 
 ## Limitations
 
