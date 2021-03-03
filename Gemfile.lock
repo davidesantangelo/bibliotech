@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 3b4d4342e7b394fc69c9783193f2d911255d3768
+  branch: master
+  specs:
+    faker (2.16.0)
+      i18n (>= 1.6, < 2)
+
+GIT
   remote: https://github.com/rspec/rspec-core.git
   revision: e7c5d030966a7e8dad3e0a67c61920c4f2437c15
   branch: master
@@ -211,6 +219,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
+  faker!
   jsonapi-serializer
   listen (~> 3.3)
   pagy
