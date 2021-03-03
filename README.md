@@ -111,12 +111,12 @@ curl -X POST 'https://biblio--tech.herokuapp.com/authors' -H 'content-type: appl
 ``` json
 
 {
-	"author": {
-		"first_name":"Davide",
-		"last_name":"Santangelo",
-		"email":"davide.santangelo@gmail.com",
-		"birthdate":"11-05-1985"
-	}
+  "author": {
+    "first_name":"Davide",
+    "last_name":"Santangelo",
+    "email":"davide.santangelo@gmail.com",
+    "birthdate":"11-05-1985"
+  }
 }
 
 ```
@@ -175,14 +175,14 @@ curl -X POST 'https://biblio--tech.herokuapp.com/authors/{AUTHOR-ID}/books' -H '
 
 ```json
 {
-	"book": {
-		"title":"A Letter to Jo",
-		"description":"There’s a horrible beauty in Williams’ depiction of the war experience, like isolated segments from a Bosch painting transported to the war in Europe. What A Letter To Jo accomplishes is placing that personal experience of Leonard in a wider context, the war experience as well as the romance with Sieracki’s grandmother. It is, truly, the American story of that era",
-		"isbn":"978-1-60309-452-8",
-		"publisher": {
-			"id": "26eb9c51-ae31-40f1-b53b-75abe417a974"
-		}
-	}
+  "book": {
+    "title":"A Letter to Jo",
+    "description":"There’s a horrible beauty in Williams’ depiction of the war experience, like isolated segments from a Bosch painting transported to the war in Europe. What A Letter To Jo accomplishes is placing that personal experience of Leonard in a wider context, the war experience as well as the romance with Sieracki’s grandmother. It is, truly, the American story of that era",
+    "isbn":"978-1-60309-452-8",
+    "publisher": {
+      "id": "26eb9c51-ae31-40f1-b53b-75abe417a974"
+    }
+  }
 }
 ```
 
