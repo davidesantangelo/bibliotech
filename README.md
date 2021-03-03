@@ -48,6 +48,102 @@ books ( all operations )
 authors ( create and read )
 publishers ( create and read )
 
+
+## Authors
+
+### Index
+
+
+```sh
+
+curl -X GET 'https://biblio--tech.herokuapp.com/authors' -H 'content-type: application/json'
+    
+```
+
+``` json
+
+{
+  "data": [
+    {
+      "id": "bf296bf3-6547-4772-9a18-4222e417e1fe",
+      "type": "author",
+      "attributes": {
+        "name": "Davide Santangelo",
+        "email": "davide.santangelo@gmail.com",
+        "birthdate": "1985-05-11",
+        "books_count": 1
+      }
+    },
+    {
+      "id": "9a8f7d11-039a-4cc5-aaa9-87e48e36f2da",
+      "type": "author",
+      "attributes": {
+        "name": "Paolo Rossi",
+        "email": "paolo.rossi@gmail.com",
+        "birthdate": "1999-07-22",
+        "books_count": 0
+      }
+    },
+    {
+      "id": "201aedb4-19d2-4092-8313-0df598dc1c8b",
+      "type": "author",
+      "attributes": {
+        "name": "Nicolas Dietrich",
+        "email": "andreas.kuvalis@kovacek.biz",
+        "birthdate": "1960-04-28",
+        "books_count": 5
+      }
+    },
+    ...
+  ]
+}
+
+```
+
+### Create
+
+```sh
+
+curl -X POST 'https://biblio--tech.herokuapp.com/authors' -H 'content-type: application/json'
+    
+```
+
+``` json
+
+{
+	"author": {
+		"first_name":"Davide",
+		"last_name":"Santangelo",
+		"email":"davide.santangelo@gmail.com",
+		"birthdate":"11-05-1985"
+	}
+}
+
+```
+
+### Show
+
+```sh
+
+curl -X GET 'https://biblio--tech.herokuapp.com/authors/{AUTHOR-ID}' -H 'content-type: application/json'
+    
+```
+
+``` json
+{
+  "data": {
+    "id": "bf296bf3-6547-4772-9a18-4222e417e1fe",
+    "type": "author",
+    "attributes": {
+      "name": "Davide Santangelo",
+      "email": "davide.santangelo@gmail.com",
+      "birthdate": "1985-05-11",
+      "books_count": 1
+    }
+  }
+}
+```
+
 ## Books
 
 ### Index
@@ -58,17 +154,26 @@ curl -X GET 'https://biblio--tech.herokuapp.com/books' -H 'content-type: applica
     
 ```
 
-### Create
+or to view all the books of a particular author
 
 
 ```sh
 
-curl -X POST 'https://biblio--tech.herokuapp.com/books' -H 'content-type: application/json'
+curl -X GET 'https://biblio--tech.herokuapp.com/authors/{AUTHOR-ID}/books' -H 'content-type: application/json'
+    
+```
+
+### Create
+
+this endpoint depends on the author being the author's child book resource
+
+```sh
+
+curl -X POST 'https://biblio--tech.herokuapp.com/authors/{AUTHOR-ID}/books' -H 'content-type: application/json'
     
 ```
 
 ```json
-
 {
 	"book": {
 		"title":"A Letter to Jo",
@@ -79,8 +184,28 @@ curl -X POST 'https://biblio--tech.herokuapp.com/books' -H 'content-type: applic
 		}
 	}
 }
+```
+
+### Show
+
+this endpoint depends on the author being the author's child book resource
+
+```sh
+
+curl -X GET 'https://biblio--tech.herokuapp.com/authors/{AUTHOR-ID}/books/{ID}' -H 'content-type: application/json'
+    
+```
+
+### Delete
+
+this endpoint depends on the author being the author's child book resource
+
+```sh
+
+curl -X DELETE 'https://biblio--tech.herokuapp.com/authors/{AUTHOR-ID}/books/{ID}' -H 'content-type: application/json'
 
 ```
+
 
 ## Limitations
 
