@@ -2,6 +2,8 @@
 
 this is a project created for the simple purpose of education. Bibliotech is a simple REST API that allows CRUD management of a library.
 
+** THE API don't need authentication **
+
 ## Schema
 
 All API access is over HTTPS, and accessed from https://biblio--tech.herokuapp.com. All data is sent and received as JSON.
