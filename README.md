@@ -2,7 +2,7 @@
 
 this is a project created for the simple purpose of education. Bibliotech is a simple REST API that allows CRUD management of a library.
 
-** THE API don't need authentication **
+**THE API don't need authentication**
 
 ## Schema
 
