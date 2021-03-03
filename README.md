@@ -49,10 +49,66 @@ authors ( create and read )
 publishers ( create and read )
 
 
-## Authors
+## Publishers
+
+An organization that publishes books.
 
 ### Index
 
+```sh
+
+curl -X GET 'https://biblio--tech.herokuapp.com/publishers' -H 'content-type: application/json'
+    
+```
+
+``` json
+{
+  "data": [
+    {
+      "id": "26eb9c51-ae31-40f1-b53b-75abe417a974",
+      "type": "publisher",
+      "attributes": {
+        "name": "Davide Publisher",
+        "address": "Via L. Pinto Foggia Italy",
+        "phone": "3887766777"
+      }
+    },
+    {
+      "id": "75d7215d-9cbc-47cc-897a-56f7599821a4",
+      "type": "publisher",
+      "attributes": {
+        "name": "Mayert-Schmidt",
+        "address": "Apt. 759 472 Batz Field, South Robbie, FL 11650-8672",
+        "phone": "(372) 642-8561 x448"
+      }
+    }
+  ]
+}
+```
+
+### Create
+
+```sh
+
+curl -X POST 'https://biblio--tech.herokuapp.com/publishers' -H 'content-type: application/json'
+
+```
+
+``` json
+{
+  "publisher": {
+		"name":"Davide Publisher",
+		"address":"Via L. Pinto Foggia Italy",
+		"phone":"3887766777"
+	}
+}
+```
+
+## Authors
+
+An author is the creator or originator of the book, and is also considered a writer. More broadly defined, an author is "the person who originated or gave existence to anything" and whose authorship determines responsibility for what was created.
+
+### Index
 
 ```sh
 
@@ -135,7 +191,7 @@ curl -X GET 'https://biblio--tech.herokuapp.com/authors/{AUTHOR-ID}' -H 'content
     "id": "bf296bf3-6547-4772-9a18-4222e417e1fe",
     "type": "author",
     "attributes": {
-      "name": "Davide Santangelo",
+      "name": "Davide Santangelo",a written or printed work consisting of pages glued or sewn together along one side and bound in covers.
       "email": "davide.santangelo@gmail.com",
       "birthdate": "1985-05-11",
       "books_count": 1
@@ -145,6 +201,8 @@ curl -X GET 'https://biblio--tech.herokuapp.com/authors/{AUTHOR-ID}' -H 'content
 ```
 
 ## Books
+
+A written or printed work consisting of pages glued or sewn together along one side and bound in covers.
 
 ### Index
 
@@ -205,7 +263,6 @@ this endpoint depends on the author being the author's child book resource
 curl -X DELETE 'https://biblio--tech.herokuapp.com/authors/{AUTHOR-ID}/books/{ID}' -H 'content-type: application/json'
 
 ```
-
 
 ## Limitations
 
