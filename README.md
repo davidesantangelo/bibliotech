@@ -97,10 +97,10 @@ curl -X POST 'https://biblio--tech.herokuapp.com/publishers' -H 'content-type: a
 ``` json
 {
   "publisher": {
-		"name":"Davide Publisher",
-		"address":"Via L. Pinto Foggia Italy",
-		"phone":"3887766777"
-	}
+    "name":"Davide Publisher",
+    "address":"Via L. Pinto Foggia Italy",
+    "phone":"3887766777"
+  }
 }
 ```
 
